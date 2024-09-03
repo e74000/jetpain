@@ -3,3 +3,9 @@
 .intellijPlatform
 .qodana
 build
+
+# Ignore the Caramelldansen.wav file
+src/main/resources/music/Caramelldansen.wav
+
+# Ignore all .wav files in the music directory (optional)
+# src/main/resources/music/*.wav

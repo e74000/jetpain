@@ -1,0 +1,19 @@
+package com.github.e74000.jetpain.listeners
+
+import com.github.e74000.jetpain.MusicPlayer
+import com.intellij.openapi.application.ApplicationActivationListener
+import com.intellij.openapi.diagnostic.thisLogger
+import com.intellij.openapi.wm.IdeFrame
+
+internal class JetPainApplicationActivationListener : ApplicationActivationListener {
+
+    override fun applicationActivated(ideFrame: IdeFrame) {
+        thisLogger().warn("Application activated. Attempting to play music.")
+        MusicPlayer.playMusic()
+    }
+
+    override fun applicationDeactivated(ideFrame: IdeFrame) {
+        thisLogger().warn("Application deactivated. Stopping music.")
+        MusicPlayer.stopMusic()
+    }
+}
